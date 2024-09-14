@@ -18,7 +18,6 @@ numStudents = nrow(studentPrefs)
 days = [("Monday", 20), ("Wednesday", 40), ("Thursday", 20)]
 dayNames = [p[1] for p in days]
 daySize = [p[2] for p in days]
-# daySize = collect(dayMap[d] for d in dayNames)
 numDays = length(daySize)
 
 function convert_choice(choice)
