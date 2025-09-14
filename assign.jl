@@ -15,6 +15,7 @@ numStudents = nrow(studentPrefs)
 
 days = [("Monday", 20), ("Wednesday", 40), ("Thursday", 20)]
 # How many people can labs take; students are assigned to whatever "keys" are used below, so multiple labs on a day just need different keys
+# These must be in the SAME order as the column headers in the CSV!
 dayNames = [p[1] for p in days]
 daySize = [p[2] for p in days]
 numDays = length(daySize)
