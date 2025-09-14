@@ -13,8 +13,8 @@ select!(studentPrefs, Not(:Timestamp))
 
 numStudents = nrow(studentPrefs)
 
-# How many people can labs on that day take; in 2024, one lab each Mon and Thu, two on Wed
 days = [("Monday", 20), ("Wednesday", 40), ("Thursday", 20)]
+# How many people can labs take; students are assigned to whatever "keys" are used below, so multiple labs on a day just need different keys
 dayNames = [p[1] for p in days]
 daySize = [p[2] for p in days]
 numDays = length(daySize)
