@@ -10,7 +10,6 @@ using Printf
 
 studentPrefs = CSV.File("/files/lab-pref.csv") |> DataFrame
 select!(studentPrefs, Not(:Timestamp))
-select!(studentPrefs, Not("Did you think of gaming this?"))
 
 numStudents = nrow(studentPrefs)
 
