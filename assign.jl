@@ -71,6 +71,16 @@ for studentNum in 1:numStudents
 end
 
 for dayNum in 1:numDays
+    println(days[dayNum][1])
+    for studentNum in 1:numStudents
+    	if value(seated[studentNum, dayNum]) == 1.0
+	   println(studentPrefs[studentNum, "Email Address"])
+	end
+    end
+    println("-----")
+end
+
+for dayNum in 1:numDays
     @printf("%s: %i\n", days[dayNum][1], value(sum(seated[i, dayNum] for i in 1:numStudents)))
 end
 
