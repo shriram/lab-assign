@@ -67,22 +67,36 @@ The program depends on the following Julia packages:
 - `DataFrames`
 - `Printf`
 
-## Personal Note
+## Build
 
-I currently have a Docker image that has all of these built: `julia-jump-highs-csv-dataframes`.
+Build a fresh Docker image with all dependencies preinstalled:
 
-Run it using
 ```
-docker run -v`pwd`:/files -ti julia-jump-highs-csv-dataframes
-```
-and from inside Julia, run:
-```
-include("/files/assign.jl")
+make build-image
 ```
 
-Note: The program now expects the CSV filename as a command-line argument.
-You can run it non-interactively like this:
+Optional: pin a specific Julia minor version during build (e.g., 1.11):
+
 ```
-docker run --rm -v"$PWD":/files julia-jump-highs-csv-dataframes julia /files/assign.jl /files/lab-pref.csv
+make build-image JULIA_VERSION=1.11
+```
+
+This creates an image named `lab-assign`.
+
+## Run
+
+The program expects the CSV filename as a command-line argument.
+Run it directly using the built image:
+
+```
+docker run --rm -v "$PWD":/files lab-assign:latest julia /files/assign.jl /files/lab-pref.csv
+```
+
+Interactive REPL option:
+
+```
+docker run --rm -it -v "$PWD":/files lab-assign:latest
+# inside Julia:
+julia /files/assign.jl /files/lab-pref.csv
 ```
 
