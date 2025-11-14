@@ -1,7 +1,3 @@
-import Pkg
-Pkg.add("JuMP")
-Pkg.add("HiGHS")
-
 using JuMP
 using HiGHS
 using CSV
