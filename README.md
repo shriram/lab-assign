@@ -91,12 +91,3 @@ Run it directly using the built image:
 ```
 docker run --rm -v "$PWD":/files lab-assign:latest julia /files/assign.jl /files/lab-pref.csv
 ```
-
-Interactive REPL option:
-
-```
-docker run --rm -it -v "$PWD":/files lab-assign:latest
-# inside Julia:
-julia /files/assign.jl /files/lab-pref.csv
-```
-
