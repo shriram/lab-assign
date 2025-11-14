@@ -41,7 +41,7 @@ may be much more elaborate (e.g., if generated from a Google Form,
 they may be designations of the actual lab: days and times), but this
 gets very awkward to process. This manual step saves this pain.
 
-You can have any number of additional fields that don' begin with
+You can have any number of additional fields that don't begin with
 sequential integers. They will be ignored.
 
 ## Program Modifications
