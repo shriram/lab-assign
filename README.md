@@ -31,7 +31,6 @@ in this order:
 - `Timestamp`
 - `Email Address`
 - the actual labs…
-- `Did you think of gaming this?`
 
 The first two fields are consistent with using Google Forms to get
 student preferences, and saving to a Google Sheet.
@@ -42,16 +41,10 @@ may be much more elaborate (e.g., if generated from a Google Form,
 they may be designations of the actual lab: days and times), but this
 gets very awkward to process. This manual step saves this pain.
 
-## Program Modifications
+You can have any number of additional fields that don' begin with
+sequential integers. They will be ignored.
 
-The last field was a joke field present in a form the first time this
-program was used. If you remove that field from the form, also remove
-the line of code
-```
-select!(studentPrefs, Not("Did you think of gaming this?"))
-```
-(Someday all this may be much more parameterized…this is not that
-day.)
+## Program Modifications
 
 You will need to edit the code to indicate the days and available
 spaces for each day. Currently it reads:
