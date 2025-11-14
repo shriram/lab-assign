@@ -34,7 +34,7 @@ numDays = length(daySize)
 
 function convert_choice(choice)
     if startswith(choice, "Really, absolutely")  # can't make it!
-        return 100000                          # would be nice to use Inf, but default solver expects finite values
+        return 100000                          # default solver expects finite values, and this saves us from infeasible solutions
     elseif choice == "Third choice"
         return 1000
     elseif choice == "Second choice"
