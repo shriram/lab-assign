@@ -8,7 +8,19 @@ using CSV
 using DataFrames
 using Printf
 
-studentPrefs = CSV.File("/files/lab-pref.csv") |> DataFrame
+# Expect the CSV file path as the first command-line argument.
+if length(ARGS) < 1
+    println("Usage: julia assign.jl <csv-file>")
+    println("Example: julia assign.jl lab-pref.csv")
+    exit(1)
+end
+
+csv_path = ARGS[1]
+if !isfile(csv_path)
+    error("Input file not found: " * csv_path)
+end
+
+studentPrefs = CSV.File(csv_path) |> DataFrame
 select!(studentPrefs, Not(:Timestamp))
 
 numStudents = nrow(studentPrefs)

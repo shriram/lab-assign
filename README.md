@@ -80,3 +80,9 @@ and from inside Julia, run:
 include("/files/assign.jl")
 ```
 
+Note: The program now expects the CSV filename as a command-line argument.
+You can run it non-interactively like this:
+```
+docker run --rm -v"$PWD":/files julia-jump-highs-csv-dataframes julia /files/assign.jl /files/lab-pref.csv
+```
+
